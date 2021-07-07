@@ -22,7 +22,11 @@
      echo $store->item_group.'</TD><TD>';
      echo $store->item_name.'</TD><TD>';
      echo $store->item_location.'</TD><TD>';
-     echo ' Usuń / Modyfikuj </TD></TR>';
+     echo '
+     <a href="./index.php?url=updateItem">
+       <button class="button_update" id="button_add" name="updateItem">Add</button>
+     </a>
+      </TD></TR>';
      $lp ++;
       //   <TD>Lp</TD><TD>Nazwa</TD><TD>Kategoria</TD><TD>Dodatkowe informacje</TD><TD>Lokalizacja</TD><TD>Akcja</TD>
   endforeach;
@@ -30,9 +34,17 @@
 
   ?>
   </table>
-
+<!--
   <button class="button_add" id="button_add" type="submit" name="add_action" value="submit">Add</button>
-
+-->
+<!--
+<form class="form" id="Formularz_konto" name="Formularz_konto" method="POST" action="./controllers/konto_aktualizuj.php">
+  <input type="submit" value="Zmień dane" class="button" id="button" />
+</form>
+-->
+<a href="./index.php?url=additem">
+  <button class="button_add" id="button_add" name="add_action">Add</button>
+</a>
 </div>
 
 <?php

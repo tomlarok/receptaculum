@@ -51,7 +51,7 @@ class Store {
       }
     }
 
-    public function updateStoreItem(){
+    public function updateStoreItem(){  // TODO WHER lp_item = x
       $this->db->query('UPDATE store SET item_name = :item_name,	item_info = :item_info, item_group = :item_group, item_location = :item_location');
       $this->db->bind(':item_name', $item_name);
       $this->db->bind(':item_info', $item_info);
