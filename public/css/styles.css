@@ -1,0 +1,187 @@
+body{
+font-family:  "Arial", cursive, sans-serif;
+font-size: 17px;
+margin:5;
+padding:0;
+}
+
+h1 {
+  font-family: "Arial";
+  text-align:center;
+  color: white;
+  font-size: 34px;
+	font-weight: 400;
+  letter-spacing: 5px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+h2 {
+  font-family: "Arial";
+  /*text-align: left; */
+  color: #61969c;
+  font-size: 25px;
+  margin-top: 5px;
+
+}
+
+h3 {
+  font-family: "Arial";
+  text-align: left;
+  color: #61969c;
+  font-size: 22px;
+  margin-top: 5px;
+  text-decoration: bold;
+}
+
+a:link    { color: #666666; text-decoration: bold; }
+a:visited { color: #666666; }
+a:active  { color: #209781; }
+a:hover   { color: #E9B64A; }
+
+.homeplace{
+  margin:15;
+  padding:0;
+}
+
+.container-login{
+  margin:15;
+  padding:0;
+  text-align: center;
+}
+
+.wrapper-login{
+  margin:15;
+  padding:0;
+}
+
+.login-form{
+  /*
+  text-align: left;
+  position: relative;
+  margin: 20px auto;*/
+
+}
+
+.button {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+
+}
+.button:hover {
+
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+
+/*====== TABELA ========== */
+.div-table{
+  display:table;
+  width:auto;
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.div-table-row{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+.div-table-col{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width:200px;
+  margin:2px;
+  padding:2px;
+}
+
+.tableHeader{
+  margin:0px;
+  padding:3px;
+  /*background-color: #1da1f2;
+  color: #b4b4b4;*/
+  background-color: #B4BFB6; /* #f0f0f0 */
+  text-align: center;
+  padding: 14px 16px;
+  color: black;
+}
+
+/*====== TABELA ========== */
+table.tablestyle {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.tablestyle td, table.tablestyle  th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.tablestyle tbody td {
+  font-size: 15px;
+}
+table.tablestyle tr:nth-child(even) {
+  background: #DDEBE0; /* #D0E4F5; */
+}
+
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+/* Navbar */
+@media (min-width: 768px) {
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+  .navbar-nav > li.navbar-right {
+    float: right !important;
+  }
+}
+/*
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: baseline;
+}
+*/
+.d-flex{
+  background-color: inherit
+}
+.bg-secondary{
+  background-color: inherit
+}
