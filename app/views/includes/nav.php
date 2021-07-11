@@ -13,12 +13,15 @@
       <a class="nav-link" href="index.php?url=store">Magazyn</a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="index.php?url=workers">Pracownicy</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="index.php?log=out">Log out</a>
     </li>';
 //  } else {
   //  print '<a class="navbar-brand" href="index.php?log=out"><img src="./public/img/log_in.png"></a>';
   }
-
+  // TODO change below things!
     if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
     {
 

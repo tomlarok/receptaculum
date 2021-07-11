@@ -6,7 +6,7 @@ class Worker {
     }
 
     //Get items from table Workers, from DB.
-    public function getWorker() {
+    public function getWorkers() {
         //Prepared statement
         $this->db->query('SELECT * FROM workers');
 
@@ -17,7 +17,7 @@ class Worker {
     //Get single item from table Store, from DB.
     public function getSingleWorker($data) {
         //Prepared statement
-        $this->db->query('SELECT * FROM worker WHERE id_worker = :id_worker');
+        $this->db->query('SELECT * FROM workers WHERE id_worker = :id_worker');
         $this->db->bind(':id_worker', $data['id_worker']);
         // It might be more other elements, values to searchin by this elements
         $results = $this->db->resultSet();
@@ -25,7 +25,7 @@ class Worker {
     }
 
     public function addWorker($data){ //	id_worker 	name 	last_name 	post
-      $this->db->query('INSERT INTO worers (name,	last_name, post)
+      $this->db->query('INSERT INTO workers (name,	last_name, post)
       VALUES (:name, :last_name, :post)');  // headers :id_item, ...
       $this->db->bind(':name', $data['name']);
       $this->db->bind(':last_name', $data['last_name']);
@@ -38,9 +38,9 @@ class Worker {
       }
     }
 
-    public function deleteStoreItem($data){
-      $this->db->query('DELETE FROM store WHERE id_item = :id_item');
-      $this->db->bind(':id_item', $data);
+    public function deleteWorker($data){
+      $this->db->query('DELETE FROM workers WHERE id_worker = :id_worker');
+      $this->db->bind(':id_worker', $data);
       //$this->db->bind(':item_name', $item_name);
       //$this->db->query('DELETE FROM store WHERE item_name = :item_name');
       //$this->db->bind(':item_name', $item_name);
@@ -52,14 +52,13 @@ class Worker {
       }
     }
 
-    public function updateStoreItem($data){
-      $this->db->query('UPDATE store SET item_name = :item_name,	item_info = :item_info, item_group = :item_group, item_location = :item_location
-      WHERE id_item = :id_item');
-      $this->db->bind(':id_item', $data['id_item']);
-      $this->db->bind(':item_name', $data['item_name']);
-      $this->db->bind(':item_info', $data['item_info']);
-      $this->db->bind(':item_group', $data['item_group']);
-      $this->db->bind(':item_location', $data['item_location']);
+    public function updateWorker($data){
+      $this->db->query('UPDATE workers SET name = :name,	last_name = :last_name, post = :post
+      WHERE id_worker = :id_worker');
+      $this->db->bind(':id_worker', $data['id_worker']);
+      $this->db->bind(':name', $data['name']);
+      $this->db->bind(':last_name', $data['last_name']);
+      $this->db->bind(':post', $data['post']);
 
       if ($this->db->execute()) {
           return true;

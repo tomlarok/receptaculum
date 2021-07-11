@@ -27,6 +27,8 @@ require_once 'controllers/config/config.php';
 // it is necessary?
 require_once 'controllers/Users.php';
 require_once 'controllers/StoreItems.php';
+
+require_once 'controllers/Workers.php';
 /*//require_once './app/helpers/session_helper.php';
 
     //Require libraries from folder libraries

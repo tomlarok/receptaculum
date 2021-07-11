@@ -153,6 +153,46 @@ This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=*/
             return $store_action;
         }
 
+        //
+        // -- WORKERS -- TODO Check if it is correct!!!
+        // -- add
+        if(isset($_GET['workers']) && ($_GET['workers']=='add')){  //?log=l
+          $workers_action = rtrim($_GET['workers'], '/'); // rtrim - Remove characters from the right side of a string:
+        //  echo $store_action ;
+        //  echo " add ";
+          $workers_action = filter_var($workers_action, FILTER_SANITIZE_URL); /*The FILTER_SANITIZE_URL filter removes all illegal URL characters from a string.
+This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=*/
+          $workers_action = explode('/', $workers_action);  //The explode() function breaks a string into an array.
+          $workers = new Workers();
+          $workers -> add();
+            return $workers_action;
+        }
+        // Update //./index.php?url=updateItem&id='.$lp.
+        if(isset($_GET['workers']) && ($_GET['workers']=='upt')  && isset($_GET['id'])){  //?log=l
+          $workers_action = rtrim($_GET['workers'], '/'); // rtrim - Remove characters from the right side of a string:
+          echo $workers_action ;
+          $workers_action = filter_var($workers_action, FILTER_SANITIZE_URL); /*The FILTER_SANITIZE_URL filter removes all illegal URL characters from a string.
+This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=*/
+          $workers_action = explode('/', $workers_action);  //The explode() function breaks a string into an array.
+          $id = rtrim($_GET['id'], '/');
+          $id = filter_var($id, FILTER_SANITIZE_URL);
+          echo "<br> workers: ".$id;
+          $workers = new Workers();
+          $workers -> update($id);
+            return $workers_action;
+        }
+
+        // Delete
+        //if(isset($_GET['store']) && ($_GET['store']=='upt')){  //?log=l
+        if(isset($_GET['workers_del'])){  //delete
+          $workers_action = rtrim($_GET['workers_del'], '/'); // rtrim - Remove characters from the right side of a string:
+          $workers_action = filter_var($workers_action, FILTER_SANITIZE_URL); /*The FILTER_SANITIZE_URL filter removes all illegal URL characters from a string.
+This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=*/
+          $workers = new Workers();
+          $workers -> delete($workers_action);
+            return $workers_action;
+        }
+
       }
 
     }
