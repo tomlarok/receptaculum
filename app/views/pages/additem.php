@@ -2,7 +2,7 @@
     <div class="wrapper-login">
       <h2>Dodaj pozycję do magazynu</h2>
       <div class="login-form">
-        <form action="index.php?log=l" method ="POST"> <!-- URLROOT.VIEW -->
+        <form action="index.php?store=add" method ="POST"> <!-- URLROOT.VIEW -->
           Nazwa:<br>
         <input type="text" name="item_name" maxlength="70" size="40" id="tytul" pattern="[a-zA-Z0-9\s |,|.|ą|ę|ś|ć|ż|ź|ł|ó|ĄĘŚĆŻŹŁÓ]+" /><br>
         Kategoria:<br>

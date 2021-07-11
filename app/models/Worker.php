@@ -1,60 +1,35 @@
 <?php
-class Store {
+class Worker {
     private $db;
     public function __construct() {
         $this->db = new Database;
     }
 
-    //Get items from Store, DB.
-    public function getStoreItems() {
+    //Get items from table Workers, from DB.
+    public function getWorker() {
         //Prepared statement
-        $this->db->query('SELECT * FROM store');
+        $this->db->query('SELECT * FROM workers');
 
         $results = $this->db->resultSet();
         return $results;
-
-        /*
-        //Email param will be binded with the login variable
-        $this->db->bind(':login', $login);
-
-        //Check if login is already registered
-        if($this->db->rowCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-        */
     }
 
     //Get single item from table Store, from DB.
-    public function getSingleStoreItem($data) {
+    public function getSingleWorker($data) {
         //Prepared statement
-        $this->db->query('SELECT * FROM store WHERE id_item = :id_item');
-        $this->db->bind(':id_item', $data['id_item']);
+        $this->db->query('SELECT * FROM worker WHERE id_worker = :id_worker');
+        $this->db->bind(':id_worker', $data['id_worker']);
         // It might be more other elements, values to searchin by this elements
         $results = $this->db->resultSet();
         return $results;
-
-        /*
-        //Email param will be binded with the login variable
-        $this->db->bind(':login', $login);
-
-        //Check if login is already registered
-        if($this->db->rowCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-        */
     }
 
-    public function addStoreItem($data){
-      $this->db->query('INSERT INTO store (item_name,	item_info, item_group, item_location)
-      VALUES (:item_name,	:item_info, :item_group, :item_location)');  // headers :id_item, ...
-      $this->db->bind(':item_name', $data['item_name']);
-      $this->db->bind(':item_info', $data['item_info']);
-      $this->db->bind(':item_group', $data['item_group']);
-      $this->db->bind(':item_location', $data['item_location']);
+    public function addWorker($data){ //	id_worker 	name 	last_name 	post
+      $this->db->query('INSERT INTO worers (name,	last_name, post)
+      VALUES (:name, :last_name, :post)');  // headers :id_item, ...
+      $this->db->bind(':name', $data['name']);
+      $this->db->bind(':last_name', $data['last_name']);
+      $this->db->bind(':post', $data['post']);
 
       if ($this->db->execute()) {
           return true;

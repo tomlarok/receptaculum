@@ -10,7 +10,8 @@
         private $error;
 
         public function __construct() {
-            $conn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
+            $conn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName . ';charset=utf8';
+            // TODO $polaczenie -> set_charset("utf8"); polskie znaki !!!
             $options = array(
                 PDO::ATTR_PERSISTENT => true,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

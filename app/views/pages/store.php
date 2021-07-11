@@ -20,13 +20,21 @@
      echo '<TR><TD>'.$lp.'</TD><TD>';
      echo $store->item_name.'</TD><TD>';
      echo $store->item_group.'</TD><TD>';
-     echo $store->item_name.'</TD><TD>';
+     echo $store->item_info.'</TD><TD>';
      echo $store->item_location.'</TD><TD>';
      echo '
-     <a href="./index.php?url=updateItem">
-       <button class="button_update" id="button_add" name="updateItem">Add</button>
+     <a href="./index.php?url=updateItem&id='.$lp.'">
+       <button class="button_update" id="button_add" name="updateItem">Edytuj</button>
      </a>
-      </TD></TR>';
+    <a href = "index.php?store_del='.$store->id_item.'">
+      <button class="button" id="button_del">Usuń</button>
+    </a>
+      </TD></TR>';  //TODO sending id_item by POST
+/*
+<form action="index.php?store=del" method ="POST">
+ <button class="button"id="submit" type="submit" name="login_action" value="submit">Usuń</button>
+</form>
+*/
      $lp ++;
       //   <TD>Lp</TD><TD>Nazwa</TD><TD>Kategoria</TD><TD>Dodatkowe informacje</TD><TD>Lokalizacja</TD><TD>Akcja</TD>
   endforeach;
