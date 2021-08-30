@@ -78,6 +78,22 @@ class Users extends Controller {
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
+                // Check if is the same login in bd
+                if($this->userModel->findUserByLogin($data['login'])){
+                  $data['loginError'] = "This login already exists.";
+                }
+                  else{
+                //Register user from model function
+                  if ($this->userModel->register($data)) {
+                      //Redirect to the login page
+                      //header('location: ' . URLROOT . '/users/login');
+                      //header('index.php');
+                  } else {
+                      die('Something went wrong.');
+                  }
+                }
+
+                /*
                 //Register user from model function
                 if ($this->userModel->register($data)) {
                     //Redirect to the login page
@@ -86,6 +102,7 @@ class Users extends Controller {
                 } else {
                     die('Something went wrong.');
                 }
+                */
             }
         }
         print_r($data);

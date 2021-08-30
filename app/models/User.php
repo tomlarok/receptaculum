@@ -6,6 +6,7 @@ class User {
     }
 
     public function register($data) {
+
         $this->db->query('INSERT INTO users (login, password) VALUES(:login, :password)');
         //$this->db->query('INSERT INTO users (login, email, password) VALUES(:login, :email, :password)');
 

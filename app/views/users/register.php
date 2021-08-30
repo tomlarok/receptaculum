@@ -7,7 +7,7 @@
 <div class="navbar">
     <?php
     //   require APPROOT . '/views/includes/navigation.php';
-    //47SXi9hHxRDeWQn
+    //47SXi9hHxRDeWQn HasloTomka1@
     $data = $_SESSION["data"];
     if (!isset($_POST['login'])){
       $data = [ //TODO data przeysłana przez funkcje
@@ -34,7 +34,7 @@
             <span class="invalidFeedback"><br>
                 <?php echo $data['loginError']; ?>
             </span>
-<!--
+<!-- TODO Zmienić by nie można było dodać takiego samego usera!!!
             <input type="email" placeholder="Email *" name="email">
             <span class="invalidFeedback">
                 <?php echo $data['emailError']; ?>
@@ -43,12 +43,12 @@
             <input type="password" placeholder="Password *" name="password">
             <span class="invalidFeedback"><br>
                 <?php echo $data['passwordError']; ?>
-            </span>
+            </span><br>
 
             <input type="password" placeholder="Confirm Password *" name="confirmPassword">
             <span class="invalidFeedback"><br>
                 <?php echo $data['confirmPasswordError']; ?>
-            </span>
+            </span><br>
 
             <button class="button"id="submit" type="submit" value="submit">Submit</button>
 
