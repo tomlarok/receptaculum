@@ -1,5 +1,5 @@
 <?php
-
+// TODO delete???
 while ($row = @mysqli_fetch_array ($result)){
 
 

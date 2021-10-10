@@ -10,7 +10,8 @@
             //Instantiate model
             return new $model();
         }
-
+// TODO Error :
+// Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 262144 bytes) in /opt/lampp/htdocs/receptaculum/app/lib/Controller.php on line 11
         //Load the view (checks for the file)
         public function view($view, $data = []) {
         //  echo "<br>".$view."<br>";

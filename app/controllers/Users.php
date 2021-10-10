@@ -78,7 +78,7 @@ class Users extends Controller {
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                // Check if is the same login in bd
+                // Check if is the same login in BD, already exists.
                 if($this->userModel->findUserByLogin($data['login'])){
                   $data['loginError'] = "This login already exists.";
                 }

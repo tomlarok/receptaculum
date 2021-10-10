@@ -193,6 +193,20 @@ This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=*/
             return $workers_action;
         }
 
+        // Addactivity
+        if(isset($_GET['activity']) && ($_GET['activity']=='add')){  //?log=l
+          $activity_action = rtrim($_GET['activity'], '/'); // rtrim - Remove characters from the right side of a string:
+        //  echo $store_action ;
+        //  echo " add ";
+          $activity_action = filter_var($activity_action, FILTER_SANITIZE_URL); /*The FILTER_SANITIZE_URL filter removes all illegal URL characters from a string.
+This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=*/
+          $activity_action = explode('/', $activity_action);  //The explode() function breaks a string into an array.
+          //$activity = new StoreActivities(); TODO change name class from Test
+          $activity = new StoreActivities();
+          $activity -> add();
+            return $activity_action;
+        }
+
       }
 
     }

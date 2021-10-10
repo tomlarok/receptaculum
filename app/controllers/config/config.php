@@ -9,10 +9,10 @@ define('DB_NAME', 'receptaculum'); //Add your DB Name
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URLROOT (Dynamic links) TODO change if dir name wil be other!!!
-define('URLROOT', 'http://localhost/mvc_logreg_oop');
+define('URLROOT', 'http://localhost/receptaculum');
 
 //Sitename
-define('SITENAME', 'Login & Register script');
+define('SITENAME', 'receptaculum, store');
 
 // views url
 define('VIEWS', './app/views');

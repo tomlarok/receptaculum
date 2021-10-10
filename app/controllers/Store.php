@@ -1,5 +1,5 @@
 <?php
-class Stors extends Controller {
+class Stors extends Controller {  // TODO to delete?
     public function __construct() {
         $this->storeModel = $this->model('StoreItem');
     }

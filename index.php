@@ -37,10 +37,11 @@ if(isset($_GET['log']) && $_GET['log']== 'l'){
   <!-- Loading pages -->
   <!-- Load page -->
   <div class="homeplace">
-    
+
     <a href="index.php?login"> Log in</a> |
     <a href="index.php?url=about"> About</a> |
     <a href="index.php?url=welcome"> Hi, welcome</a><br>
+
   </div>
   <!--<a href="index.php?page=login"> Log in</a><br> -->
   <?php

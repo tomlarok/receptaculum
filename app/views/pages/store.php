@@ -29,6 +29,9 @@
     <a href = "index.php?store_del='.$store->id_item.'">
       <button class="button" id="button_del">Usuń</button>
     </a>
+    <a href = "./index.php?url=addactivity&id='.$store->id_item.'">
+      <button class="button" id="button_del">Wydaj/Przyjmij</button>
+    </a>
       </TD></TR>';  //TODO sending id_item by POST
 /*
 <form action="index.php?store=del" method ="POST">

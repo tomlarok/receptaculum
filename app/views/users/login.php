@@ -24,7 +24,7 @@
     <div class="wrapper-login">
       <h2>Sign in</h2>
       <div class="login-form">
-        <form action="index.php?log=l" method ="POST"> <!-- URLROOT.VIEW -->
+        <form action="index.php?log=l" method ="POST"> <!-- URLROOT.VIEW Haslotestowe1!-->
             <input type="text" placeholder="login *" name="login">
             <span class="invalidFeedback"><br>
                 <?php /*$data = $_SESSION['logdata']*/; echo $data['loginError']; ?>

@@ -34,7 +34,7 @@
             <span class="invalidFeedback"><br>
                 <?php echo $data['loginError']; ?>
             </span>
-<!-- TODO Zmienić by nie można było dodać takiego samego usera!!!
+<!-- 
             <input type="email" placeholder="Email *" name="email">
             <span class="invalidFeedback">
                 <?php echo $data['emailError']; ?>
