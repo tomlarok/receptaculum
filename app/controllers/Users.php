@@ -92,22 +92,11 @@ class Users extends Controller {
                       die('Something went wrong.');
                   }
                 }
-
-                /*
-                //Register user from model function
-                if ($this->userModel->register($data)) {
-                    //Redirect to the login page
-                    //header('location: ' . URLROOT . '/users/login');
-                    //header('index.php');
-                } else {
-                    die('Something went wrong.');
-                }
-                */
             }
         }
         print_r($data);
         $_SESSION["data"] = $data;  // TODO change?
-      //  $this->view('users/register', $data);
+
     }
 
     public function login() {
@@ -143,7 +132,7 @@ class Users extends Controller {
             //Check if all errors are empty
             if (empty($data['loginError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->userModel->login($data['login'], $data['password']);
-                echo $data['login']." ".$data['password']; // TEST
+              //  echo $data['login']." ".$data['password']; // TEST
                 is_null($loggedInUser);
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
@@ -170,9 +159,7 @@ class Users extends Controller {
     public function createUserSession($user) {
       //  $_SESSION['user_id'] = $user->id;
         $_SESSION['login'] = $user->login;
-        echo "Zalogowany user: ".$_SESSION['login'];
-        //$_SESSION['email'] = $user->email;
-        //header('location:' . URLROOT . '/pages/index');
+
         header('index.php');  // after login
     }
 

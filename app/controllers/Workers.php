@@ -69,8 +69,6 @@ class Workers extends Controller {
                   echo "<br> Dodano pozycję <br>";
               } else {
                   $data['error'] = 'Błąd dodania.';
-
-                //  $this->view('users/login', $data);
               }
           }
 
@@ -110,7 +108,6 @@ class Workers extends Controller {
           }
 
           //Check if all errors are empty
-          //if (empty($data['loginError']) && empty($data['passwordError'])) {
           if (empty($data['error'])) {
               $worker = $this->workerModel->updateWorker($data);
               //echo $data['login']." ".$data['password']; // TEST
@@ -120,7 +117,6 @@ class Workers extends Controller {
               } else {
                   $data['error'] = 'Błąd zmiany pozycji.';
 
-                //  $this->view('users/login', $data);
               }
           }
 
@@ -136,8 +132,7 @@ class Workers extends Controller {
 
     public function delete($id){ //TODO change validation routing data
       $worker = $this->workerModel->deleteWorker($id);
-                echo "Store class  Delete <br>";
-      //return $worker;
+            //    echo "Store class  Delete <br>";
       return $id;
     }
 

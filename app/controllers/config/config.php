@@ -1,14 +1,14 @@
 <?php
 //Database params
-define('DB_HOST', 'localhost'); //Add your db host
-define('DB_USER', 'root'); // Add your DB root
-define('DB_PASS', ''); //Add your DB pass
-define('DB_NAME', 'receptaculum'); //Add your DB Name
+define('DB_HOST', 'localhost'); 
+define('DB_USER', ''); 
+define('DB_PASS', ''); 
+define('DB_NAME', 'receptaculum'); 
 
 //APPROOT
 define('APPROOT', dirname(dirname(__FILE__)));
 
-//URLROOT (Dynamic links) TODO change if dir name wil be other!!!
+//URLROOT (Dynamic links) Change if dir name wil be other, and you will use it.
 define('URLROOT', 'http://localhost/receptaculum');
 
 //Sitename

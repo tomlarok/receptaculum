@@ -4,10 +4,8 @@
       <div class="login-form">
         <form action="index.php?activity=add" method ="POST"> <!-- URLROOT.VIEW -->
           Nazwa:<br>
-          <select name="item_name">
-          <!--    <option value="1">Pierwsza opcja</option>
-              <option value="2">Druga opcja</option>
-              <option value="3">Trzecia opcja</option>  -->
+          <select name="id_item">
+
 <?php
 require_once './app/controllers/StoreItems.php';
 $st = new StoreItems;
@@ -17,7 +15,18 @@ $data = $st->get();
     if(isset($_GET['id'])){
       $id = validate($_GET['id']);
       //echo '<br>ID: '.$id.'<br>';
-      print '<option value="'.$id.'">'.$id.' Wybrano</option>';
+      $checked_item = "Nie wybrano"; // Checked items from store table /store activites(?)
+
+      foreach($data['store'] as $store):
+      //  var_dump($store[$id]);
+        if ($store->id_item == $id) {
+          $checked_item = $store->item_name;
+          $id_item = $id;
+        }
+        //print '<option value="'.$id.'">'.$id.' '.$store->item_name.' Wybrano</option>';
+      endforeach;
+
+      print '<option value="'.$id_item.'">'.$checked_item.' [Wybierz]</option>';
     }
 
               foreach($data['store'] as $store):
@@ -33,14 +42,7 @@ $data = $st->get();
                 return trim(htmlspecialchars($str)); /*przeszukują ciąg znaków, podany jako argument, w celu znalezienia znaczników HTML i PHP.
                  HTMLSPECIALCHARS zamienia znaki specialne (<,>,’,”,&) na ich „bezpieczne odpowiedniki”. */
               }
-/*
-              // spr czy dane zostały przesłane i czy nie są puste
-              if (!isset($_POST['tytul']) && empty($_POST["tytul"])){
-                echo "Brak podanego tytułu";
-              } else {
-                $tytul = validate($_POST['tytul']);
-              }
-*/
+
 
 ?>
           </select>
@@ -53,20 +55,19 @@ $data = $wk ->get();
           foreach($data['workers'] as $workers):
           //   echo '<TR><TD>'.$lp.'</TD><TD>';
           //   echo $store->item_name;
-             print '<option value="'.$workers->id_worker.'">'.$workers->name.'</option>';
+             print '<option value="'.$workers->id_worker.'">'.$workers->name.' '.$workers->last_name.'</option>';
           endforeach;
 ?>
           </select>
           <br>
           Dodatkowe informacje:<br>
           <input type="text" name="item_info" maxlength="40" size="40" id="keywords" pattern="[a-zA-Z0-9\s |,|.|ą|ę|ś|ć|ż|ź|ł|ó|ĄĘŚĆŻŹŁÓ]+" /><br>
-          <input type="hidden" name="id_item" value="<?php echo $id_item ?>"/> <!-- TODO better in cookie? -->
+      <!--     <input type="hidden" name="id_item" value=" //echo $id_item ?>"/> TODO better in cookie? -->
         <span class="invalidFeedback"><br>
-            <?php //echo $data['inputError']; ?>
+            <?php //echo $data['inputError'];//TODO Change item_name to id_item as lik sendig worker ?>
         </span><br>
             <br>
             <button class="button" id="submit" type="submit" name="addItem" value="submit">Wydaj z magazynu</button>
-
         </form>
       </div>
     </div>

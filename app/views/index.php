@@ -1,4 +1,4 @@
-<?php // include("./app/require.php"); ?>
+<?php // // TODO: Delete all file? include("./app/require.php"); ?>
 <html>
   <head>
     <?php include("./app/views/includes/head.php"); ?>
@@ -17,12 +17,4 @@
 </html>
 <?php
 
-/*
-// Head, headers
-include_once "./app/pages/includes/head.php";
-// navbar
-include_once "./app/pages/includes/nav.php";
-// footer
-include_once "./app/pages/includes/footer.php";
-*/
 ?>

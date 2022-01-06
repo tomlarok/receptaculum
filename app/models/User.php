@@ -35,29 +35,19 @@ class User {
         if(!empty($row) ){
         //  print_r($row);
           $hashedPassword = $row->password; //TODO if login is not in table users (?login, pass are incorect?) -> Notice: Trying to get property of non-object in /opt/lampp/htdocs/template/app/models/User.php on line 33
-          echo $row->password;
+        //  echo $row->password;
           if (password_verify($password, $hashedPassword)) {  // TODO change to #pass
         //  if ($password == $hashedPassword) {
-              echo "<br>True, password correct!</br>";
+            //  echo "<br>True, password correct!</br>";
               return $row;
           } else {
-            echo "<br>False, password incorrect!</br>";
+          //  echo "<br>False, password incorrect!</br>";
               return false;
           }
         } else {
         //  echo " Null<br>";
         }
-        /*
-        print_r($row);
-        $hashedPassword = $row->password; //TODO if login is not in table users (?login, pass are incorect?) -> Notice: Trying to get property of non-object in /opt/lampp/htdocs/template/app/models/User.php on line 33
 
-        if (password_verify($password, $hashedPassword)) {  // TODO change to #pass
-      //  if ($password == $hashedPassword) {
-            return $row;
-        } else {
-            return false;
-        }
-        */
     }
 
     //Find user by login. Login is passed in by the Controller.

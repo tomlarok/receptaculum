@@ -6,15 +6,13 @@
       // Get id/ from GET url
       if(isset($_GET['id'])){
         $id = $_GET['id'];
-        echo '<br>ID: '.$id.'<br>';
       }
       // Get data from id row
     //  getSingle($id)
 
       $st = new StoreItems;
       $data = $st->getSingle($id);
-    //  var_dump($data);
-    //  echo "<br>";
+
 
       $lp = 1;
       foreach($data['store'] as $store):

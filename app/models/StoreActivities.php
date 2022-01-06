@@ -30,12 +30,15 @@ class StoreActivity {
     /*  $this->db->query('INSERT INTO store_activity (id_item,	id_worker, date, activity)
       VALUES (:id_item,	:id_worker, NOW(), :activity)');  // Date()
       */
-      $this->db->query('INSERT INTO store_activity (id_item,	id_worker, activity)
-      VALUES (:id_item,	:id_worker, :activity)');  // Date()
+      //$timestamp = strtotime(date('Y-m-d H:i:s'));
+      $timestamp = ('2021-03-12 12:21:12');
+      $this->db->query('INSERT INTO store_activity (id_item,	id_worker, activity, date)
+      VALUES (:id_item,	:id_worker, :activity, :date)');  // Date()
 
       $this->db->bind(':id_item', $data['id_item']);
       $this->db->bind(':id_worker', $data['id_worker']);
       $this->db->bind(':activity', $data['activity']);
+      $this->db->bind(':date', $timestamp); // TODO Add date to DB!
     // Data()  $this->db->bind(':item_location', $data['item_location']);
 
       if ($this->db->execute()) {

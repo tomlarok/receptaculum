@@ -1,7 +1,10 @@
 <?php
   // require APPROOT . '/views/includes/head.php';
   //require '/views/includes/head.php';
-
+  if(isset($_SESSION['login'])){
+      //header('index.php');
+      exit();
+      }
 ?>
 
     <?php
@@ -17,8 +20,8 @@
           'confirmPasswordError' => ''
       ];
     }
-    ?>
 
+    ?>
 
 <div class="container-login">
     <div class="wrapper-login">

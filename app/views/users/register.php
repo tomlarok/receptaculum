@@ -1,13 +1,6 @@
-<?php
-//   require APPROOT . '/views/includes/head.php';
-//require './app/views/includes/head.php';
-//session_start();
-?>
-
 <div class="navbar">
     <?php
-    //   require APPROOT . '/views/includes/navigation.php';
-    //47SXi9hHxRDeWQn HasloTomka1@
+
     $data = $_SESSION["data"];
     if (!isset($_POST['login'])){
       $data = [ //TODO data przeysłana przez funkcje
@@ -34,7 +27,7 @@
             <span class="invalidFeedback"><br>
                 <?php echo $data['loginError']; ?>
             </span>
-<!-- 
+<!--
             <input type="email" placeholder="Email *" name="email">
             <span class="invalidFeedback">
                 <?php echo $data['emailError']; ?>

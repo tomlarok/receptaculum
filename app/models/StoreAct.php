@@ -24,27 +24,21 @@ class StoreAct{
         return $results;
 
     }
-/*
-    public function getSingleStoreActivity2($data) {  //TODO delete if it will be NOT necessery
-        //Prepared statement
-        $this->db->query('SELECT * FROM store_activity WHERE id_activity = :id_activity');
-        $this->db->bind(':id_activity', $data['id_activity']);
-        // It might be more other elements, values to searchin by this elements
-        $results = $this->db->resultSet();
-        return $results;
 
-      }
-*/
     public function addStoreActivity($data){
     /*  $this->db->query('INSERT INTO store_activity (id_item,	id_worker, date, activity)
       VALUES (:id_item,	:id_worker, NOW(), :activity)');  // Date()
       */
-      $this->db->query('INSERT INTO store_activity (id_item,	id_worker, activity)
-      VALUES (:id_item,	:id_worker, :activity)');  // Date()
+    /*  $this->db->query('INSERT INTO store_activity (id_item,	id_worker, activity)
+      VALUES (:id_item,	:id_worker, :activity)');  // Date() */
+
+      $this->db->query('INSERT INTO store_activity (id_item,	id_worker, activity, date)
+      VALUES (:id_item,	:id_worker, :activity, :date)');  // Date()
 
       $this->db->bind(':id_item', $data['id_item']);
       $this->db->bind(':id_worker', $data['id_worker']);
       $this->db->bind(':activity', $data['activity']);
+      $this->db->bind(':date', $data['date']);
     // Data()  $this->db->bind(':item_location', $data['item_location']);
 
       if ($this->db->execute()) {

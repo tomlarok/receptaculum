@@ -43,7 +43,10 @@ if(isset($_GET['log']) && $_GET['log']== 'l'){
     <a href="index.php?url=welcome"> Hi, welcome</a><br>
 
   </div>
-  <!--<a href="index.php?page=login"> Log in</a><br> -->
+
+  <!-- Page Content -->
+<section class="py-5"> <!-- p - for classes that set padding, y - for classes that set both *-top and *-bottom -->
+  <div class="container">
   <?php
   //include('./app/views/users/login.php');
   //echo $page;
@@ -63,6 +66,8 @@ if(isset($_GET['log']) && $_GET['log']== 'l'){
   }
 
   ?>
+  </div>
+</section>
 
 </body>
 </html>

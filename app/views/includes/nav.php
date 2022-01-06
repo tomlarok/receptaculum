@@ -51,7 +51,7 @@
 <div class="d-flex">
   <ul class="navbar-nav">
   <li class="navbar-right">
-    <!--  <input type="image" data-toggle="modal" data-target="#myModal" src="./views/img/sign_in4.png" /> -->
+
 
     <!--  Utwórz konto -->
   </li>
@@ -65,15 +65,7 @@ if (!isset($_SESSION['login']))
      <a class="navbar-brand" href="index.php?login"><img src="./public/img/log_in.png"></a>
   </li>
   ';
-/*
-  // Logowania
-  print '
-  <li class="navbar-right">
-     <input type="image"  data-toggle="modal" data-target="#myModalLog" src="./views/img/log_in.png" />
-    <!--  <a href = "#" data-toggle="modal" data-target="#myModalLog"  > Zaloguj</a> -->
-  </li>
-  ';
-  */
+
 } else {
   // Log out
   print '
