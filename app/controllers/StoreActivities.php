@@ -57,11 +57,17 @@ class StoreActivities extends Controller {
         //  echo date("Y-m-d H:i:s"); //TODO Delete after
         //  echo "Id item contorleer: ".trim($_POST['id_item']);
         //  echo trim($_POST['id_worker']);
+        if (empty(trim($_POST['date']))) {
+          $date = date('Y-m-d H:i:s');
+        } else {
+          $date = trim($_POST['date']);
+        }
           $data = [
               'id_item' => trim($_POST['id_item']),
               'id_worker' => trim($_POST['id_worker']),
               //'date' => date("Y-m-d H:i:s"),
-              'date' => (date('Y-m-d H:i:s')),
+              'date' => $date,
+              //'date' => (date('Y-m-d H:i:s')),
               //'date' => trim($_POST['date']),
               'activity' => 'out',
               //'activity' => trim($_POST['activity']),
