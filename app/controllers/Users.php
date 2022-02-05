@@ -87,6 +87,8 @@ class Users extends Controller {
                   if ($this->userModel->register($data)) {
                       //Redirect to the login page
                       //header('location: ' . URLROOT . '/users/login');
+                      echo "Konto założone.";
+                      echo "<br><a href='index.php'>Powrót</a>";
                       //header('index.php');
                   } else {
                       die('Something went wrong.');
@@ -94,7 +96,7 @@ class Users extends Controller {
                 }
             }
         }
-        print_r($data);
+      //  print_r($data);
         $_SESSION["data"] = $data;  // TODO change?
 
     }

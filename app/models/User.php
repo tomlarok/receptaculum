@@ -7,14 +7,15 @@ class User {
 
     public function register($data) {
 
-        $this->db->query('INSERT INTO users (login, password) VALUES(:login, :password)');
+        $this->db->query('INSERT INTO users (login, password, last_activity) VALUES(:login, :password, :last_activity)');
         //$this->db->query('INSERT INTO users (login, email, password) VALUES(:login, :email, :password)');
-
 
         //Bind values
         $this->db->bind(':login', $data['login']);
       //  $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
+        $date = date('Y-m-d H:i:s');
+        $this->db->bind(':last_activity', $date);
 
         //Execute function
         if ($this->db->execute()) {
